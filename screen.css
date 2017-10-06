@@ -1,4 +1,4 @@
-.workable-ext-rating-overlay {
+.whr-detail-overlay {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,11 +11,11 @@
     cursor: pointer;
 }
 
-.workable-ext-rating-overlay.is-hidden {
+.whr-detail-overlay.is-hidden {
     display: none;
 }
 
-.workable-ext-rating-overlay p {
+.whr-detail-overlay p {
     font-size: 1em;
     text-align: center;
     color: #666;
@@ -23,7 +23,7 @@
     z-index: 20;
 }
 
-.workable-ext-rating-overlay__opaquebg {
+.whr-detail-overlay__opaquebg {
     position: absolute;
     left: 0;
     top: 0;
@@ -35,7 +35,7 @@
     background: radial-gradient(white 30%, #e6e5e5);
 }
 
-.workable-ext-rating-overlay__iconblock {
+.whr-detail-overlay__iconblock {
     position: absolute;
     left: 0;
     top: 0;
@@ -45,7 +45,7 @@
     z-index: 10;
 }
 
-.workable-ext-rating-summary-overlay {
+.whr-list-rating-overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -55,3 +55,14 @@
     background: white;
 }
 
+.search-result__container:hover .whr-list-rating-overlay {
+    background: #FEF8EA;
+}
+
+.candidate.candidate--selected .whr-list-rating-overlay {
+    background: #fffad8
+}
+
+.whr-sm-txt {
+    font-size: 10px;
+}

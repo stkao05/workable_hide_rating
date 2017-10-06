@@ -1,0 +1,16 @@
+{
+  "name": "workable_hide_rating",
+  "version": "0.0.2",
+  "description": "",
+  "scripts": {
+      "lint": "eslint ./",
+      "pack": "zip -x 'node_modules/*' -R workable_hide_rating '*.js' '*.json' '*.css'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.2",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}

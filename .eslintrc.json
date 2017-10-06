@@ -1,0 +1,26 @@
+{
+    "env": {
+        "browser": true
+    },
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"impliedStrict": true
+		}
+	},
+	"rules": {
+		"indent": [
+			2,
+			4,
+			{
+				"SwitchCase": 1
+			}
+		],
+		"max-len": "off",
+		"no-warning-comments": "off",
+		"require-jsdoc": "off",
+		"no-console": "off"
+	}
+}

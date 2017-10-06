@@ -1,24 +1,37 @@
 {
   "manifest_version": 2,
-
   "name": "Workable - Hide Rating",
-  "description": "This extension allows the user to change the background color of the current page.",
-  "version": "1.0",
+  "description": "This extension hide your colleagues' candidates rating before you have submitted your own ratting.",
+  "version": "0.0.2",
+  "icons": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+  },
   "content_scripts": [
     {
-      "matches": ["https://*.workable.com/*"],
-      "js": ["workable.js"],
-      "css": ["workable.css"]
+      "matches": [
+          "https://*.workable.com/backend/candidates/*",
+          "https://*.workable.com/backend/jobs/*/browser/review/candidate/*"
+      ],
+      "js": ["candidate_page.js"],
+      "css": ["screen.css"],
+      "run_at": "document_start"
     },
     {
-      "matches": ["https://*.workable.com/backend/candidates/search*"],
-      "js": ["search.js"],
-      "css": ["workable.css"],
+      "matches": [
+          "https://*.workable.com/backend/candidates/search*"
+      ],
+      "js": ["search_page.js"],
+      "css": ["screen.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+          "https://*.workable.com/backend/jobs/*/browser/review/candidate*"
+      ],
+      "js": ["browser_page.js"],
+      "css": ["screen.css"],
       "run_at": "document_start"
     }
-  ],
-  "permissions": [
-    "activeTab",
-    "storage"
   ]
 }

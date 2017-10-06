@@ -6,35 +6,29 @@
         }
 
         for (const w of widgets) {
-            const alreadyAdded = !!w.querySelector('yworkable-ext-rating-summary-overlay');
+            const alreadyAdded = !!w.querySelector('.whr-list-rating-overlay');
             if (alreadyAdded) {
                 continue;
             }
 
             const overlay = document.createElement('div');
-            overlay.setAttribute('class', 'workable-ext-rating-summary-overlay');
+            overlay.setAttribute('class', 'whr-list-rating-overlay');
             overlay.innerHTML = '?';
             w.appendChild(overlay);
         }
     }
 
-    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-
     const observer = new MutationObserver(() => {
-        console.log("search.js mutate call");
         hideSearchResultRatingSummary();
     });
 
     observer.observe(document, {
-      subtree: true,
-      attributes: true
+        subtree: true,
+        childList: true
     });
 
-    document.addEventListener("DOMContentLoaded", function(event) {
-        console.log("search.js loaded");
+    document.addEventListener("DOMContentLoaded", () => {
         hideSearchResultRatingSummary();
     });
-
-
 })();
 
